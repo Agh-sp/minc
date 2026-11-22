@@ -27,7 +27,7 @@ if [[ ! -f data/survival/level.dat ]]; then
   rcon 'mv create survival normal' || true
   created=0
   for _ in $(seq 1 90); do
-    if [[ -f data/survival/level.dat ]]; then
+    if [[ -f data/survival/level.dat || -d data/survival ]]; then
       created=1
       break
     fi

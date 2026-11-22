@@ -145,7 +145,6 @@ required_plugins=(
   DeluxeMenus
   LuckPerms
   GriefPrevention
-  HuskHomes
   WorldEdit
   WorldGuard
   ProtocolLib
