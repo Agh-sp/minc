@@ -119,4 +119,16 @@ rcon 'rg flag __global__ mob-spawning -w lobby deny'
 rcon 'rg flag __global__ use -w lobby allow'
 rcon 'rg flag __global__ item-drop -w lobby deny'
 rcon 'rg flag __global__ item-pickup -w lobby deny'
-printf 'لابی و دنیای Survival آماده‌اند. بعد از ورود و /login، دستور /menu را بزن.\n'
+
+python3 - <<'PY'
+from pathlib import Path
+p = Path("data/commands.yml")
+text = p.read_text(encoding="utf-8") if p.exists() else "aliases:\n"
+if "lobby:" not in text:
+    if "aliases:" not in text:
+        text += "\naliases:\n"
+    text = text.replace("aliases:\n", "aliases:\n  lobby:\n  - mv tp lobby\n", 1)
+    p.write_text(text, encoding="utf-8")
+PY
+
+printf 'لابی و دنیای Survival آماده‌اند. بعد از ورود و /login، دستور /menu یا /lobby را بزن.\n'
