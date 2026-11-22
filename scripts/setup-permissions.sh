@@ -38,6 +38,16 @@ run 'lp group default permission set multiverse.teleport.self.w.roleplay false'
 # Public menu access; do not grant /dm open or other DeluxeMenus admin commands.
 run 'lp group default permission set deluxemenus.guimenucommand true'
 run 'lp group default permission set deluxemenus.guimenu.modes true'
+run 'lp group default permission set deluxemenus.guimenu.shop true'
+
+# Kits only in Survival, not in lobby (sponsor kit is granted per-player from admin panel).
+run 'lp group default permission set essentials.kit false world=lobby'
+run 'lp group default permission set essentials.kits.* false world=lobby'
+run 'lp group default permission set essentials.kit true world=survival'
+run 'lp group default permission set essentials.kits.tazevared true world=survival'
+run 'lp group default permission set essentials.kits.kargar true world=survival'
+run 'lp group default permission set essentials.kits.jangjoo true world=survival'
+run 'lp group default permission set essentials.kits.sponsor false'
 
 # Basic Survival claims and player-quality-of-life commands only.
 run 'lp group default permission set griefprevention.claims true'

@@ -1,0 +1,130 @@
+menu_title: '&6&lSurvival Shop &8| &e/sell'
+open_command: shop
+size: 27
+items:
+  diamond:
+    material: DIAMOND
+    slot: 10
+    display_name: '&bDiamond &7(x1)'
+    lore:
+      - '&7Price: &a$100'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 100
+      deny_commands:
+        - '[message] &cNot enough money! Need $100.'
+    left_click_commands:
+      - '[takemoney] 100'
+      - '[console] give %player_name% diamond 1'
+      - '[message] &aBought 1x Diamond for $100.'
+  iron:
+    material: IRON_INGOT
+    slot: 11
+    display_name: '&fIron Ingot &7(x8)'
+    lore:
+      - '&7Price: &a$40'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 40
+      deny_commands:
+        - '[message] &cNot enough money! Need $40.'
+    left_click_commands:
+      - '[takemoney] 40'
+      - '[console] give %player_name% iron_ingot 8'
+      - '[message] &aBought 8x Iron Ingot for $40.'
+  beef:
+    material: COOKED_BEEF
+    slot: 12
+    display_name: '&cSteak &7(x16)'
+    lore:
+      - '&7Price: &a$20'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 20
+      deny_commands:
+        - '[message] &cNot enough money! Need $20.'
+    left_click_commands:
+      - '[takemoney] 20'
+      - '[console] give %player_name% cooked_beef 16'
+      - '[message] &aBought 16x Steak for $20.'
+  wood:
+    material: OAK_LOG
+    slot: 13
+    display_name: '&6Oak Log &7(x32)'
+    lore:
+      - '&7Price: &a$25'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 25
+      deny_commands:
+        - '[message] &cNot enough money! Need $25.'
+    left_click_commands:
+      - '[takemoney] 25'
+      - '[console] give %player_name% oak_log 32'
+      - '[message] &aBought 32x Oak Log for $25.'
+  cobble:
+    material: COBBLESTONE
+    slot: 14
+    display_name: '&7Cobblestone &7(x64)'
+    lore:
+      - '&7Price: &a$15'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 15
+      deny_commands:
+        - '[message] &cNot enough money! Need $15.'
+    left_click_commands:
+      - '[takemoney] 15'
+      - '[console] give %player_name% cobblestone 64'
+      - '[message] &aBought 64x Cobblestone for $15.'
+  torch:
+    material: TORCH
+    slot: 15
+    display_name: '&eTorch &7(x32)'
+    lore:
+      - '&7Price: &a$10'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 10
+      deny_commands:
+        - '[message] &cNot enough money! Need $10.'
+    left_click_commands:
+      - '[takemoney] 10'
+      - '[console] give %player_name% torch 32'
+      - '[message] &aBought 32x Torch for $10.'
+  gapple:
+    material: GOLDEN_APPLE
+    slot: 16
+    display_name: '&6Golden Apple &7(x1)'
+    lore:
+      - '&7Price: &a$150'
+      - '&eClick to buy'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 150
+      deny_commands:
+        - '[message] &cNot enough money! Need $150.'
+    left_click_commands:
+      - '[takemoney] 150'
+      - '[console] give %player_name% golden_apple 1'
+      - '[message] &aBought 1x Golden Apple for $150.'
