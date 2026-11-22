@@ -60,7 +60,6 @@ services:
 
   admin-panel:
     image: python:3.12-alpine
-    profiles: ["admin"]
     restart: unless-stopped
     mem_limit: 128m
     ports:

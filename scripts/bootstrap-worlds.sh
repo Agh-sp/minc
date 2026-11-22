@@ -78,10 +78,24 @@ if [[ ! -f data/.lobby-built ]]; then
   rcon 'fill -9 81 8 -8 82 9 oak_leaves'
   rcon 'fill 7 80 7 10 80 10 grass_block'
   rcon 'fill 8 81 8 9 82 9 oak_leaves'
-  # Clickable / step-on portal pad to enter Survival
-  rcon 'setblock 0 78 6 command_block{Command:"mv tp @p survival"}'
-  rcon 'setblock 0 79 6 emerald_block'
-  rcon 'setblock 0 80 6 stone_pressure_plate'
+  # 3 Mode Portals in front of spawn:
+  # Center: Survival (Open, Emerald + Sea Lantern + step-on pad)
+  rcon 'fill -2 80 3 -2 83 3 emerald_block'
+  rcon 'fill 2 80 3 2 83 3 emerald_block'
+  rcon 'fill -2 84 3 2 84 3 sea_lantern'
+  rcon 'setblock 0 78 3 command_block{Command:"mv tp @p survival"}'
+  rcon 'setblock 0 79 3 emerald_block'
+  rcon 'setblock 0 80 3 stone_pressure_plate'
+  # Left: BedWars (Locked with Iron Bars)
+  rcon 'fill -9 80 3 -9 83 3 redstone_block'
+  rcon 'fill -5 80 3 -5 83 3 redstone_block'
+  rcon 'fill -9 84 3 -5 84 3 redstone_block'
+  rcon 'fill -8 80 3 -6 83 3 iron_bars'
+  # Right: Roleplay (Locked with Iron Bars)
+  rcon 'fill 5 80 3 5 83 3 lapis_block'
+  rcon 'fill 9 80 3 9 83 3 lapis_block'
+  rcon 'fill 5 84 3 9 84 3 lapis_block'
+  rcon 'fill 6 80 3 8 83 3 iron_bars'
   rcon 'setworldspawn 0 80 10'
   rcon 'gamerule doMobSpawning false'
   rcon 'gamerule doDaylightCycle false'
