@@ -1,0 +1,73 @@
+menu_title: '&8MINC &7| &fGame Menu'
+open_command:
+  - menu
+register_command: true
+size: 27
+
+items:
+  info:
+    material: CLOCK
+    slot: 4
+    display_name: '&b&lMINC Network'
+    lore:
+      - '&7Survival: &aOnline'
+      - '&7BedWars va Roleplay: &cGhofl'
+      - '&8Client: Java Edition'
+
+  survival:
+    material: GRASS_BLOCK
+    slot: 11
+    display_name: '&a&lSURVIVAL'
+    lore:
+      - '&7Donyaye asli baraye zende-mandegan.'
+      - '&7Claim, home va safar be vahshat.'
+      - ''
+      - '&eBaraye vorood click kon.'
+    left_click_commands:
+      - '[player] mv tp survival'
+      - '[close]'
+    right_click_commands:
+      - '[player] mv tp survival'
+      - '[close]'
+
+  bedwars_locked:
+    material: RED_BED
+    slot: 13
+    display_name: '&c&lBEDWARS &8[GHOFLE]'
+    lore:
+      - '&7In bazi hanooz amade nist.'
+      - '&cVorood be BedWars ghofl ast.'
+    left_click_commands:
+      - '[message] &cBedWars hanooz ghofl ast.'
+      - '[close]'
+    right_click_commands:
+      - '[message] &cBedWars hanooz ghofl ast.'
+      - '[close]'
+
+  roleplay_locked:
+    material: BOOK
+    slot: 15
+    display_name: '&e&lROLEPLAY &8[GHOFLE]'
+    lore:
+      - '&7In donya hanooz amade nist.'
+      - '&cVorood be Roleplay ghofl ast.'
+    left_click_commands:
+      - '[message] &cRoleplay hanooz ghofl ast.'
+      - '[close]'
+    right_click_commands:
+      - '[message] &cRoleplay hanooz ghofl ast.'
+      - '[close]'
+
+  lobby:
+    material: NETHER_STAR
+    slot: 22
+    display_name: '&b&lLOBBY'
+    lore:
+      - '&7Bazgasht be lobby asli.'
+      - '&eBaraye bazgasht click kon.'
+    left_click_commands:
+      - '[player] mv tp lobby'
+      - '[close]'
+    right_click_commands:
+      - '[player] mv tp lobby'
+      - '[close]'

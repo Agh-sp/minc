@@ -1,0 +1,9 @@
+# MINC menu configuration. Modes are maintained in gui_menus/modes.yml.
+check_updates: false
+debug: LOW
+use_admin_commands_in_menus_list: false
+menus_list_page_size: 10
+metas_list_page_size: 15
+gui_menus:
+  modes:
+    file: modes.yml

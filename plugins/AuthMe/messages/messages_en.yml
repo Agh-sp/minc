@@ -1,0 +1,195 @@
+# Finglish localization for AuthMe 5.7.0; placeholders and keys are preserved.
+# List of global tags:
+# %nl% - Goes to new line.
+# %username% - Replaces the username of the player receiving the message.
+# %displayname% - Replaces the nickname (and colors) of the player receiving the message.
+
+# Registration
+registration:
+  register_request: '&3Baraye sabt nam /register <password> <ConfirmPassword> ra bezan.'
+  command_usage: '&cEstefade: /register <password> <ConfirmPassword>'
+  reg_only: '&4Baraye vorood aval ba /register ramz besaz va whitelist beshi.'
+  kicked_admin_registered: 'Modir accountet ra sabt kard; baraye vorood dobare /login kon.'
+  success: '&2Account ba movafaghiat sabt shod!'
+  disabled: '&cSabt nam dar bazi gheyr faal ast.'
+  name_taken: '&cIn username ghablan sabt shode ast.'
+
+# Password errors on registration
+password:
+  match_error: '&cRamz va taeede ramz yeki nistand.'
+  name_in_password: '&cAz esme khodet be onvan ramz estefade nakon.'
+  unsafe_password: '&cRamz kafi ghavi nist; ramz-e digari entekhab kon.'
+  forbidden_characters: '&4Ramz character-e gheyr mojaz darad. Mojaz: %valid_chars'
+  wrong_length: '&cTool-e ramz bayad dar bazeye mojaz bashad.'
+
+# Login
+login:
+  command_usage: '&cEstefade: /login <password>'
+  wrong_password: '&cRamz eshtebah ast.'
+  success: '&2Ba movafaghiat vared shodi!'
+  login_request: '&cBaraye vorood /login <password> ra bezan.'
+  timeout_error: '&4Zaman-e vorood tamoom shod; dobare vasl sho.'
+
+# Errors
+error:
+  unregistered_user: '&cIn account hanooz sabt nashode ast.'
+  denied_command: '&cBaraye estefade az command aval login kon.'
+  denied_chat: '&cBaraye chat kardan aval login kon.'
+  not_logged_in: '&cHanooz login nakardei.'
+  tempban_max_logins: '&cLogin-e eshtebah ziad shod; modati az server kick shodi.'
+  max_registration: '&cHad-e account baraye in connection por shode (%reg_count/%max_acc %reg_names).'
+  no_permission: '&4Ejaze-ye anjam-e in kar ra nadari.'
+  unexpected_error: '&4Moshkeli pish amad. Lotfan ba admin tamas begir.'
+  kick_for_vip: '&3Server por ast; badtar dobare biya.'
+  logged_in: '&cHanooz login kardei.'
+  kick_unresolved_hostname: '&cHostname peyda nashod; dobare vasl sho.'
+
+# AntiBot
+antibot:
+  kick_antibot: 'AntiBot faal ast; chand daghighe sabr kon va dobare vasl sho.'
+  auto_enabled: '&4[AntiBot] Connection-ha ziyad shod; hefazat faal shod.'
+  auto_disabled: '&2[AntiBot] Hefazat bad az %m daghighe khamoosh shod.'
+
+unregister:
+  success: '&cAccount ba movafaghiat hazf shod.'
+  command_usage: '&cEstefade: /unregister <password>'
+
+# Other messages
+misc:
+  accounts_owned_self: 'To %count account dari:'
+  accounts_owned_other: 'Player-e %name %count account darad:'
+  account_not_activated: '&cAccountet faal nashode; email-et ra check kon.'
+  password_changed: '&2Ramz ba movafaghiat taghir kard.'
+  logout: '&2Ba movafaghiat logout shodi.'
+  reload: '&2Configuration and database have been reloaded correctly!'
+  usage_change_password: '&cEstefade: /changepassword <oldPassword> <newPassword>'
+
+# Session messages
+session:
+  invalid_session: '&cIP avaz shode va session-et expire shode; dobare login kon.'
+  valid_session: '&2Ba vasl-e dobare, session-et taeed shod.'
+
+# Error messages when joining
+on_join_validation:
+  name_length: '&4Tool-e username bayad 3 ta 16 character bashad.'
+  characters_in_name: '&4Username character-e gheyr mojaz darad. Mojaz: %valid_chars'
+  country_banned: '&4Az mantaghe shoma ejaze vorood nist.'
+  not_owner_error: 'In username hanooz baraye hesab-e shoma sabt nashode; esm-e dige entekhab kon.'
+  kick_full_server: '&4Server por ast; lotfan badtar dobare biya.'
+  same_nick_online: '&4In username alan dar server online ast.'
+  invalid_name_case: 'Ba username-e %valid vasl sho, na %invalid.'
+  same_ip_online: 'Player-e digari ba hamoon IP alan dar server ast.'
+  quick_command: 'Command ro kheili sari ferestadi. Dobare vasl sho va chand lahze sabr kon.'
+
+# Email
+email:
+  usage_email_add: '&cEstefade: /email add <email> <confirmEmail>'
+  usage_email_change: '&cEstefade: /email change <oldEmail> <newEmail>'
+  new_email_invalid: '&cEmail-e jadid dorost nist; dobare talash kon.'
+  old_email_invalid: '&cEmail-e ghadimi dorost nist; dobare talash kon.'
+  invalid: '&cEmail address dorost nist.'
+  added: '&2Email ba movafaghiat be account ezafe shod.'
+  request_confirmation: '&cLotfan email-et ra taeed kon.'
+  changed: '&2Email ba movafaghiat taghir kard.'
+  email_show: '&2Email-e hesab: &f%email'
+  incomplete_settings: 'Setting-haye email kamel nist; ba admin tamas begir.'
+  already_used: '&4In email ghablan estefade shode ast.'
+  send_failure: 'Email ersal nashod; ba admin tamas begir.'
+  no_email_for_account: '&2Hanooz email be account vasl nakardei.'
+  add_email_request: '&3Email ra ba /email add <yourEmail> <confirmEmail> ezafe kon.'
+  change_password_expired: 'Az in command dige nemitavani ramz ra taghir bedi.'
+  email_cooldown_error: '&cEmail be tazegi ersal shode; %time sabr kon.'
+  add_not_allowed: '&cEzafe kardan-e email mojaz nist.'
+  change_not_allowed: '&cTaghir-e email mojaz nist.'
+
+# Password recovery by email
+recovery:
+  forgot_password_hint: '&3Ramz ra faramoosh kardi? /email recovery <yourEmail> ra bezan.'
+  command_usage: '&cEstefade: /email recovery <Email>'
+  email_sent: '&2Email-e bazyabi ersal shod; inbox-et ra check kon.'
+  code:
+    code_sent: 'Code-e bazyabi be email-et ersal shod.'
+    incorrect: 'Code eshtebah ast; %count talash baghi monde.'
+    tries_exceeded: 'Tedade talash por shod. Baraye code-e jadid /email recovery [email] ra bezan.'
+    correct: 'Code ba movafaghiat taeed shod.'
+    change_password: 'Baraye taghir ramz /email setpassword <new password> ra bezan.'
+
+# Captcha
+captcha:
+  usage_captcha: '&3Baraye login captcha ra hal kon: /captcha %captcha_code'
+  wrong_captcha: '&cCaptcha eshtebah ast. /captcha %captcha_code ra bezan.'
+  valid_captcha: '&2Captcha dorost hal shod.'
+  captcha_for_registration: 'Baraye sabt nam aval captcha ra hal kon: /captcha %captcha_code'
+  register_captcha_valid: '&2Captcha dorost ast! Hala ba /register sabt nam kon.'
+
+# Verification code
+verification:
+  code_required: '&3In command hassas ast va email verification mikhahad; inbox-et ra check kon.'
+  command_usage: '&cEstefade: /verification <code>'
+  incorrect_code: '&cCode eshtebah ast; /verification <code> ra ba code-e email bezan.'
+  success: '&2Hoviat taeed shod; dar in session mitavani command-haye hassas ra ejra koni.'
+  already_verified: '&2Dar in session ejaze-ye command-haye hassas ra dari.'
+  code_expired: '&3Code expire shod; command-e hassas ra dobare ejra kon ta code jadid begiri.'
+  email_needed: '&3Baraye taeed hoviat, email-et ra be account vasl kon.'
+
+# Two-factor authentication
+two_factor:
+  code_created: '&2Code-e razi: %code. Az inja scan kon: %url'
+  confirmation_required: 'Code ra ba /2fa confirm <code> taeed kon.'
+  code_required: 'Code-e do- marhalei ra ba /2fa code <code> befrest.'
+  already_enabled: 'Taeed-e do-marhalei ghablan faal ast.'
+  enable_error_no_code: 'Code-e 2FA nadari ya expire shode; /2fa add ra bezan.'
+  enable_success: 'Taeed-e do-marhalei faal shod.'
+  enable_error_wrong_code: 'Code eshtebah ya expire shode; /2fa add ra dobare bezan.'
+  not_enabled_error: '2FA faal nist; baraye shoroo /2fa add ra bezan.'
+  removed_success: 'Taeed-e do-marhalei hazf shod.'
+  invalid_code: 'Code dorost nist.'
+
+# Time units
+time:
+  second: 'sanie'
+  seconds: 'sanie'
+  minute: 'daqiqe'
+  minutes: 'daqiqe'
+  hour: 'saat'
+  hours: 'saat'
+  day: 'rooz'
+  days: 'rooz'
+
+# Command validation messages
+command:
+  player_only: '&cIn command faghat baraye player ast.'
+  player_only_alternative: '&cFaghat player; lotfan %alternative ra estefade kon.'
+  failed_to_parse: '&4Parse-e command-e AuthMe anjam nashod.'
+  unknown: '&4Command shenakhte nashod.'
+  incorrect_arguments: '&4Argument-haye command dorost nist.'
+  did_you_mean: '&eManzooret &6%cmd&e bood?'
+  see_help: '&eBaraye komak /%cmd ra bezan.'
+  detailed_help: '&6Komak: &f/%cmd'
+
+# Admin command messages
+admin:
+  force_login:
+    player_offline: '&cPlayer needs to be online!'
+    forbidden: '&cYou cannot force login the player %name!'
+    success: '&2Force login for %name performed!'
+  accounts:
+    ip_not_found: '&cThis IP does not exist in the database.'
+    single_account: '&2%name is a single account player.'
+    no_last_ip: '&cNo known last IP address for player.'
+  email_show: '&2%name''s email: %email'
+  antibot:
+    status: '&2AntiBot status: %status'
+    override_enabled: '&2AntiBot Manual Override: enabled!'
+    override_disabled: '&2AntiBot Manual Override: disabled!'
+    invalid_mode: '&cInvalid AntiBot mode!'
+  reload:
+    db_type_change: '&eNote: cannot change database type during /authme reload.'
+    error: '&cError occurred during reload of AuthMe.'
+  spawn:
+    set_success: '&2Correctly defined new spawn point.'
+    set_fail: '&cSetSpawn has failed, please retry.'
+    first_set_success: '&2Correctly defined new first spawn point.'
+    first_set_fail: '&cSetFirstSpawn has failed, please retry.'
+    not_defined: '&cSpawn has failed, please try to define the spawn.'
+    first_not_defined: '&cFirst spawn has failed, please try to define the first spawn.'
