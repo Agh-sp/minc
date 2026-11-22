@@ -83,7 +83,7 @@ if [[ ! -f data/.lobby-built ]]; then
   rcon 'fill -2 80 3 -2 83 3 emerald_block'
   rcon 'fill 2 80 3 2 83 3 emerald_block'
   rcon 'fill -2 84 3 2 84 3 sea_lantern'
-  rcon 'setblock 0 78 3 command_block{Command:"mv tp @p survival"}'
+  rcon 'setblock 0 78 3 repeating_command_block{auto:1b,Command:"execute positioned 0 80 3 run mv tp @p[distance=..2] survival"}'
   rcon 'setblock 0 79 3 emerald_block'
   rcon 'setblock 0 80 3 stone_pressure_plate'
   # Left: BedWars (Locked with Iron Bars)
