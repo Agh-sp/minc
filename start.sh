@@ -222,8 +222,9 @@ if ! wait_for_plugins; then
   fail "یکی از پلاگین‌های ضروری پس از راه‌اندازی نهایی لود نشد؛ پورت بسته شد و سرور متوقف ماند."
 fi
 trap - ERR
+docker compose up -d admin-panel >/dev/null 2>&1 || true
 
 printf '\nسرور آماده است. ابتدا /register <ramz> <ramz>، دفعات بعد /login <ramz>؛ منو: /menu.\n'
+printf 'پنل مدیریت (همیشه روشن): http://SERVER_IP:8765  (نام کاربری: aziz | رمز: 32983298)\n'
 printf 'گزارش اجرا: docker compose logs -f survival\n'
 printf 'توقف امن: ./stop.sh\n'
-printf 'پنل خصوصی را فقط هنگام نیاز اجرا کن: ./scripts/start-panel.sh\n'

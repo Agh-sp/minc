@@ -127,6 +127,8 @@ def main() -> int:
             "settings.registration.type": ("PASSWORD", False),
             "settings.restrictions.maxRegPerIp": ("5", False),
             "settings.restrictions.teleportUnAuthedToSpawn": ("true", False),
+            "settings.restrictions.SaveQuitLocation": ("false", False),
+            "settings.restrictions.ForceSpawnLocOnJoinEnabled": ("true", False),
             "settings.restrictions.allowMovement": ("false", False),
             "settings.restrictions.ProtectInventoryBeforeLogIn": ("true", False),
             "settings.restrictions.DenyTabCompleteBeforeLogin": ("true", False),
