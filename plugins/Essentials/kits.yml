@@ -27,14 +27,14 @@ kits:
   sponsor:
     delay: 86400
     items:
-      - netherite_sword 1
-      - netherite_pickaxe 1
-      - netherite_axe 1
-      - netherite_helmet 1
-      - netherite_chestplate 1
-      - netherite_leggings 1
-      - netherite_boots 1
+      - netherite_sword 1 sharpness:5 unbreaking:3 looting:3 fire_aspect:2 mending:1
+      - netherite_pickaxe 1 efficiency:5 unbreaking:3 fortune:3 mending:1
+      - netherite_axe 1 efficiency:5 sharpness:5 unbreaking:3 mending:1
+      - netherite_helmet 1 protection:4 respiration:3 aqua_affinity:1 unbreaking:3 mending:1
+      - netherite_chestplate 1 protection:4 unbreaking:3 mending:1
+      - netherite_leggings 1 protection:4 swift_sneak:3 unbreaking:3 mending:1
+      - netherite_boots 1 protection:4 feather_falling:4 depth_strider:3 unbreaking:3 mending:1
       - totem_of_undying 1
-      - golden_apple 16
+      - enchanted_golden_apple 8
       - ender_pearl 16
       - cooked_beef 64
