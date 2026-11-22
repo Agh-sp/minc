@@ -22,8 +22,6 @@ fi
 if [[ ! -f .env ]]; then
   printf '%s\n' \
     'این سرور عمومی و برای TLauncher است: ورود با نام کاربری آفلاین و رمز AuthMe انجام می‌شود.'
-  read -r -p 'نام کاربری TLauncher برای ادمین: ' mc_op
-  [[ "$mc_op" =~ ^[A-Za-z0-9_]{3,16}$ ]] || fail "نام نامعتبر است؛ فقط حروف انگلیسی، عدد و _، بین 3 تا 16 کاراکتر."
 
   read -r -p 'پورت سرور [25565]: ' mc_port
   mc_port="${mc_port:-25565}"
@@ -38,7 +36,6 @@ if [[ ! -f .env ]]; then
   umask 077
   cat > .env <<EOF
 EULA=TRUE
-MC_OP=$mc_op
 MC_PORT=$mc_port
 MC_BIND=0.0.0.0
 COMPOSE_PROJECT_NAME=minc-survival
