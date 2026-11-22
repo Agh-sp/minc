@@ -22,7 +22,7 @@ services:
       MAX_MEMORY: "1536M"
       ONLINE_MODE: "FALSE"
       ENFORCE_SECURE_PROFILE: "FALSE"
-      ENABLE_WHITELIST: "TRUE"
+      ENABLE_WHITELIST: "FALSE"
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD: "${RCON_PASSWORD:?Run start.sh to create the private RCON password}"
       # The 2 GiB container budget is intentionally sized for a small 2-4 player server.
