@@ -7,3 +7,5 @@ metas_list_page_size: 15
 gui_menus:
   modes:
     file: modes.yml
+  shop:
+    file: shop.yml

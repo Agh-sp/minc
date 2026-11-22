@@ -371,9 +371,10 @@ class PanelHandler(BaseHTTPRequestHandler):
                 else ""
             )
             sel_btn = f'<button type="button" class="btn-gray" onclick="selectPlayer(\'{name_esc}\')">انتخاب</button>'
+            sponsor_btn = f'<form method="POST" action="/action" style="display:inline"><input type="hidden" name="player" value="{name_esc}"><button class="btn-amber" name="act" value="sponsor">کیت اسپانسر</button></form>'
             rows.append(
                 f"<tr><td><strong>{name_esc}</strong></td><td>{conn_badge}</td><td>{role_badge}</td><td>{ban_badge}</td>"
-                f'<td><div class="row">{sel_btn}{op_btn}{kick_btn}{ban_btn}</div></td></tr>'
+                f'<td><div class="row">{sel_btn}{op_btn}{sponsor_btn}{kick_btn}{ban_btn}</div></td></tr>'
             )
         return "\n".join(rows)
 
@@ -453,6 +454,10 @@ class PanelHandler(BaseHTTPRequestHandler):
             p = form.get("player", "").strip()
             _, out = rcon(f"{act} {p}")
             msg = out or f"دستور {act} {p} اجرا شد."
+        elif act == "sponsor":
+            p = form.get("player", "").strip()
+            _, out = rcon(f"lp user {p} permission set essentials.kits.sponsor true")
+            msg = out or f"دسترسی کیت اسپانسر به {p} داده شد."
         elif act == "give":
             p = form.get("player", "").strip()
             item = form.get("item", "").strip()
