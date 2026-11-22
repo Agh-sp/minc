@@ -182,7 +182,7 @@ stop_on_start_failure() {
 trap stop_on_start_failure ERR
 
 # Keep the game port private during first boot and authentication hardening.
-export MC_BIND=127.0.0.1
+export MC_BIND=0.0.0.0
 if ! docker compose config >/dev/null; then
   docker compose stop survival >/dev/null 2>&1 || true
   fail "تنظیمات Docker Compose معتبر نیستند؛ Minecraft متوقف شد. فایل .env و docker-compose.yml را بررسی کن."
