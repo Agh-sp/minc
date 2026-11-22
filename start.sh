@@ -130,8 +130,6 @@ if [[ -r /proc/meminfo ]]; then
   fi
 fi
 
-python3 scripts/prepare-offline-users.py .env data || fail "فایل whitelist/ops برای نام‌های آفلاین ساخته نشد."
-
 printf '\nدر حال آماده‌سازی مجوز پوشهٔ داده...\n'
 mkdir -p data
 if [[ "$(id -u)" == "0" ]]; then
