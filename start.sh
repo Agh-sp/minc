@@ -21,22 +21,9 @@ fi
 
 if [[ ! -f .env ]]; then
   printf '%s\n' \
-    'این سرور برای TLauncher است: ورود با نام کاربری آفلاین و رمز AuthMe انجام می‌شود.' \
-    'برای کم‌کردن جعل نام، whitelist روشن است و فقط نام‌هایی که می‌دهی وارد می‌شوند.'
+    'این سرور عمومی و برای TLauncher است: ورود با نام کاربری آفلاین و رمز AuthMe انجام می‌شود.'
   read -r -p 'نام کاربری TLauncher برای ادمین: ' mc_op
   [[ "$mc_op" =~ ^[A-Za-z0-9_]{3,16}$ ]] || fail "نام نامعتبر است؛ فقط حروف انگلیسی، عدد و _، بین 3 تا 16 کاراکتر."
-
-  read -r -p "نام‌های TLauncher مجاز، جداشده با کاما [فقط $mc_op]: " mc_whitelist
-  mc_whitelist="${mc_whitelist:-$mc_op}"
-  mc_whitelist="${mc_whitelist// /}"
-  IFS=',' read -r -a allowed_players <<< "$mc_whitelist"
-  ((${#allowed_players[@]} > 0)) || fail "فهرست بازیکنان خالی است."
-  for player in "${allowed_players[@]}"; do
-    [[ "$player" =~ ^[A-Za-z0-9_]{3,16}$ ]] || fail "نام نامعتبر در whitelist: $player"
-  done
-  if [[ ",$mc_whitelist," != *",$mc_op,"* ]]; then
-    mc_whitelist="$mc_op,$mc_whitelist"
-  fi
 
   read -r -p 'پورت سرور [25565]: ' mc_port
   mc_port="${mc_port:-25565}"
@@ -52,7 +39,6 @@ if [[ ! -f .env ]]; then
   cat > .env <<EOF
 EULA=TRUE
 MC_OP=$mc_op
-MC_WHITELIST=$mc_whitelist
 MC_PORT=$mc_port
 MC_BIND=0.0.0.0
 COMPOSE_PROJECT_NAME=minc-survival
