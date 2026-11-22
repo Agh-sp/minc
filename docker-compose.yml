@@ -1,0 +1,80 @@
+services:
+  survival:
+    image: itzg/minecraft-server:java21
+    restart: unless-stopped
+    stop_grace_period: 2m
+    init: true
+    tty: true
+    stdin_open: true
+    mem_limit: 2g
+    ports:
+      - "${MC_BIND:-0.0.0.0}:${MC_PORT:-25565}:25565/tcp"
+    environment:
+      # Offline/TLauncher mode: AuthMe and the whitelist are required safeguards.
+      EULA: "${EULA:-FALSE}"
+      TYPE: "PAPER"
+      VERSION: "1.20.4"
+      UID: "${PUID:-1000}"
+      GID: "${PGID:-1000}"
+      LEVEL: "lobby"
+      LEVEL_TYPE: "flat"
+      INIT_MEMORY: "512M"
+      MAX_MEMORY: "1536M"
+      ONLINE_MODE: "FALSE"
+      ENFORCE_SECURE_PROFILE: "FALSE"
+      ENABLE_WHITELIST: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "${RCON_PASSWORD:?Run start.sh to create the private RCON password}"
+      # The 2 GiB container budget is intentionally sized for a small 2-4 player server.
+      MAX_PLAYERS: "4"
+      VIEW_DISTANCE: "6"
+      SIMULATION_DISTANCE: "4"
+      DIFFICULTY: "normal"
+      MODE: "survival"
+      PVP: "TRUE"
+      SPAWN_PROTECTION: "0"
+      MOTD: "MINC | Survival | /menu"
+      PLUGINS: |
+        https://cdn.modrinth.com/data/9js4IEHC/versions/f2TqUTfw/AuthMe-5.7.0.jar
+        https://hangarcdn.papermc.io/plugins/Multiverse/Multiverse-Core/versions/5.8.2/PAPER/multiverse-core-5.8.2.jar
+        https://cdn.modrinth.com/data/lKEzGugV/versions/pIvQcXW8/PlaceholderAPI-2.12.3.jar
+        https://cdn.modrinth.com/data/kKZkPgJ7/versions/PNKQ6RMs/DeluxeMenus-1.14.1-Release.jar
+        https://cdn.modrinth.com/data/Vebnzrzj/versions/b0mk8uS6/LuckPerms-Bukkit-5.5.71.jar
+        https://cdn.modrinth.com/data/O4o4mKaq/versions/RQv9pNC6/GriefPrevention.jar
+        https://cdn.modrinth.com/data/J6U9o3JG/versions/kY52YCNm/HuskHomes-Paper-4.11.1.jar
+        https://cdn.modrinth.com/data/1u6JkXh5/versions/Bu1zaaoc/worldedit-bukkit-7.3.9.jar
+        https://cdn.modrinth.com/data/DKY9btbd/versions/NpagB1YQ/worldguard-bukkit-7.0.9-dist.jar
+        https://github.com/dmulloy2/ProtocolLib/releases/download/5.3.0/ProtocolLib.jar
+        https://cdn.modrinth.com/data/P1OZGk5p/versions/Fkfcr89K/ViaVersion-5.12.2.jar
+        https://cdn.modrinth.com/data/NpvuJQoq/versions/WFO37e8T/ViaBackwards-5.12.2.jar
+        https://github.com/ViaVersion/ViaRewind/releases/download/4.2.0/ViaRewind-4.2.0.jar
+      # Keep checked-in menu and translation files authoritative on each container boot.
+      SYNC_SKIP_NEWER_IN_DESTINATION: "false"
+      TZ: "Europe/Zurich"
+    volumes:
+      - ./data:/data
+      - ./plugins:/plugins:ro
+
+  portainer:
+    image: portainer/portainer-ce:lts
+    profiles: ["admin"]
+    restart: unless-stopped
+    mem_limit: 256m
+    command:
+      - "--http-enabled"
+      - "--base-url=/panl"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer-data:/data
+
+  admin-proxy:
+    image: nginx:alpine
+    profiles: ["admin"]
+    restart: unless-stopped
+    mem_limit: 32m
+    depends_on:
+      - portainer
+    ports:
+      - "127.0.0.1:8765:80"
+    volumes:
+      - ./admin/nginx.conf:/etc/nginx/conf.d/default.conf:ro
